@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>后台图色插件V2.02[361度]帮助</title>
+<style>
+body {
+	font-size: 12px;
+	font-family: Verdana, "宋体"
+}
+
+.ts {
+	background: #fff;
+	margin: 0 0 40px 0;
+}
+
+.ts th {
+	color: #7B797B;
+	background: #DEDFDE;
+	line-height: 24px;
+}
+
+.ts td {
+	padding: 6px 0;
+}
+
+.name {
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 1px dashed #9C9A9C;
+	color: #006939;
+}
+
+.canshu {
+	background: #E7E7EF;
+}
+
+.red {
+	color: #d60000;
+}
+
+.fanhui {
+	border-bottom: 1px dashed #9C9A9C;
+}
+
+.lizi {
+	border-bottom: 1px dashed #9C9A9C;
+}
+</style>
+</head>
+<body>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="TransformWindow" id="TransformWindow"></a>TransformWindow
+				转换窗口</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>
+				转换窗口，对要取后台图色数据的窗口使用该函数后才能取后台图色数据。如果是DX图形绘图的窗口，DX绘图区域必须有部分移到屏幕外，否则无法使用。转换窗口后，有些窗口（特别是大多数游戏的）要等待一会儿才能用其它函数可靠地取到后台图色数据，等待的时间要大于画面两次刷新的时间间隔。转换后到取消转换前，可以无限次使用取到后台图色数据的命令，即通常只需要转换一次。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：整型数<br />
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">Call Plugin.bgkms6_10.TransformWindow(hwnd)</td>
+		</tr>
+		<tr>
+
+		</tr>
+	</table>
+
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="UnTransformWindow"
+				id="UnTransformWindow"></a>UnTransformWindow 取消窗口转换</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>
+				取消窗口转换，DX图形绘图的窗口，用过TransformWindow后，必须用UnTransformWindow取消窗口转换才能让DX绘图完全移到屏幕中。
+			</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：整型数。<br />
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">Call Plugin.BGCP2_02.UnTransformWindow(hwnd)</td>
+		</tr>
+		<tr>
+
+
+		</tr>
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="GetPixelColor" id="GetPixelColor"></a>GetPixelColor
+				获得指定点的颜色</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>获得指定点的颜色。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口数据句柄：长整型数。<br /> 参数2 横坐标：整型数，窗口客户区坐标。<br />
+				参数3 纵坐标：整型数，窗口客户区坐标。
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">颜色值：整型数。</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">color=Plugin.BGCP2_02.GetPixelColor(hwnd,0,0)</td>
+		</tr>
+		<tr>
+
+
+		</tr>
+	</table>
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="CmpColor" id="CmpColor"></a>CmpColor
+				判断指定点的颜色</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>判断指定点的颜色，后台的IfColor</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：整型数。 <br /> 参数2 横坐标：整型数，窗口客户区坐标。 <br />
+				参数3 纵坐标：整型数，窗口客户区坐标。 <br /> 参数4 颜色：整型数。 <br /> 参数5
+				颜色最大偏差：整型数。游戏中不同电脑上显示的颜色会有点偏差，这个参数用于兼容这种情况，它设置的是RGB各颜色分量偏差的最大允许值，取值范围是0-255，0是无颜色偏差。
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">布尔值。相同时，返回True；不同时，返回False。&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">Call
+				tj=Plugin.BGCP2_02.CmpColor(hwnd,6,5,Lib.算法.十六进制转十进制("ffffff"),30)<br /> If tj=true<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;满足条件&quot;,4096<br /> Else<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;不满足条件&quot;,4096<br /> EndIf<br />
+			</td>
+		</tr>
+		<tr>
+		</tr>
+	</table>
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="FindColor" id="FindColor"></a>FindColor
+				找色</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>后台找色。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：长整型数。 <br /> 参数2
+				左边界：整型数，用于设置找色范围，找色区域左上角的横坐标（窗口客户区坐标）。 <br /> 参数3
+				上边界：整型数，用于设置找色范围，找色区域左上角的纵坐标（窗口客户区坐标）。 <br /> 参数4
+				右边界：整型数，用于设置找色范围，找色区域右下角的横坐标（窗口客户区坐标）。 <br /> 参数5
+				下边界：整型数，用于设置找色范围，找色区域右下角的纵坐标（窗口客户区坐标）。 <br /> 参数6 颜色：整型数。 <br />
+				参数7
+				颜色最大偏差：整型数。游戏中不同电脑上显示的颜色会有点偏差，这个参数用于兼容这种情况，它设置的是RGB各颜色分量偏差的最大允许值，取值范围是0-255，0是无颜色偏差。
+				<br /> 参数8 查找方式：整型数，用于设置找色时扫描的顺序。可取如下值：
+				<table width="450" border="1" cellpadding="0" cellspacing="0">
+					<tr>
+						<th width="34" scope="col">值</th>
+						<th width="410" scope="col">说明</th>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>从上到下，每行从左到右</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>从上到下，每行从右到左</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>从下到上，每行从左到右</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>从下到上，每行从右到左</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>从左到右，每列从上到下</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>从左到右，每列从下到上</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>从右到左，每列从上到下</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>从右到左，每列从下到上</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>从中间开始找色</td>
+					</tr>
+				</table> <br /> 参数9 横坐标，整型数，用于返回找到的颜色的横坐标（窗口客户区坐标），找不到时此值是-1。 <br /> 参数10
+				纵坐标，整型数，用于返回找到的颜色的纵坐标（窗口客户区坐标），找不到时此值是-1。<br />
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">找到返回0，没找到返回-1。&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">Call
+				Plugin.BGCP2_02.FindColor(hwnd,0,0,1024,768,Lib.算法.十六进制转十进制("ffffff"),0,0,x,y)<br />
+			</td>
+		</tr>
+		<tr>
+
+		</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="LoadBMP" id="LoadBMP"></a>LoadBMP
+				载入BMP文件数据</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>载入BMP图片文件的数据到内存，可以同时载入多个文件，要求图片格式是24位BMP文件，找图前使用该命令，在脚本中运行一次该命令即可。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1
+				文件名组：字符串或数组，由于一次载入多个BMP文件，所以称为文件名组。如果一次只载入一个BMP文件，此处参数填写该BMP文件路径即可。如果一次载入多个BMP文件，可以使用两种形式：
+				<table width="450" border="1" cellpadding="0" cellspacing="0">
+					<tr>
+						<th width="34" scope="col">值</th>
+						<th width="410" scope="col">说明</th>
+					</tr>
+					<tr>
+						<td>字符串形式</td>
+						<td>各文件路径用“|”号隔开，例如：图片1文件路径|图片2文件路径|图片3文件路径。</td>
+					</tr>
+					<tr>
+						<td>数组形式</td>
+						<td>支持用文件路径名构成的一维数组做参数。</td>
+					</tr>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">数据句柄数组：成功时返回的是一个一维的整数数组，失败时返回的是个整数（错误代码）。每个BMP文件载入内存后都将获得一个对应的数据句柄，这个句柄将作为找图命令的参数。一次载入多个BMP文件，将同时获得多个数据句柄，数据句柄数组里存放的就是这些数据句柄。数据句柄在数组中的排列顺序和文件名组中对应的图片的顺序相同。&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">BMPArray=
+				Plugin.BGCP2_02.LoadBMP("U.bmp|L.bmp|D.bmp|R.bmp|J.bmp|K.bmp")<br />
+				If IsArray(BMPArray)=False<br /> &nbsp;&nbsp;&nbsp;&nbsp;MsgBox
+				"载入图片失败",4096<br /> &nbsp;&nbsp;&nbsp;&nbsp;EndScript<br /> End If<br />
+			</td>
+		</tr>
+		<tr>
+
+
+		</tr>
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="FreeBMP" id="FreeBMP"></a>FreeBMP
+				释放BMP文件数据</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>释放用LoadBMP命令载入到内存中的图片数据。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1
+				数据句柄数组：和LoadBMP命令中的意义相同，直接使用LoadBMP命令的返回值作为该参数即可，如果使用了N次LoadBMP命令，FreeBMP命令也必须使用N次，LoadBMP和FreeBMP配对使用。</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">Call Plugin.BGCP2_02.FreeBMP(BMPArray)</td>
+		</tr>
+		<tr>
+
+
+		</tr>
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="FindPicture" id="FindPicture"></a>FindPicture
+				范围找图</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>获得找到的第一个坐标。用于找图的图片四角的颜色相同时，被该颜色被视为透明色，找图顺序和按键精灵相同。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：长整型数。 <br /> 参数2
+				左边界：整型数，用于设置找色范围，找色区域左上角的横坐标（窗口客户区坐标）。 <br /> 参数3
+				上边界：整型数，用于设置找色范围，找色区域左上角的纵坐标（窗口客户区坐标）。 <br /> 参数4
+				右边界：整型数，用于设置找色范围，找色区域右下角的横坐标（窗口客户区坐标）。 <br /> 参数5
+				下边界：整型数，用于设置找色范围，找色区域右下角的纵坐标（窗口客户区坐标）。 <br /> 参数6
+				数据句柄或图片文件路径：数据句柄在LoadBMP命令的数据句柄组里已经解释过了；图片文件路径，字符串，要求图片格式是24位BMP文件。<br />
+				参数7
+				颜色最大偏差：整型数。游戏中不同电脑上显示的颜色会有点偏差，这个参数用于兼容这种情况，它设置的是RGB各颜色分量偏差的最大允许值，取值范围是0-255，０是无颜色偏差。
+				<br /> 参数8 相似度：浮点数，表示不满足条件的点所允许占的比例。取值为0到1之间的小数，1为最相似，相似度越高找图速度越快。
+				<br /> 参数9 横坐标，整型数，用于返回找到的颜色的横坐标（窗口客户区坐标），找不到时此值是-1。 <br /> 参数10
+				纵坐标，整型数，用于返回找到的颜色的纵坐标（窗口客户区坐标），找不到时此值是-1。
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">Call Plugin.BGCP2_02.FindPicture(hwnd, 0, 0,
+				1024, 768, "A.bmp", 10, 0.9, x, y)<br /> &nbsp;&nbsp;&nbsp;&nbsp;If
+				x >= 0 And y >= 0 Then <br />
+				&nbsp;&nbsp;&nbsp;&nbsp;MsgBox(x&","&y) <br /> End If <br />
+			</td>
+		</tr>
+		<tr>
+
+
+		</tr>
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="FindPictureA" id="FindPictureA"></a>FindPictureA
+				范围找图</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>范围找图,获得找到的所有坐标。用于找图的图片四角的颜色相同时，被该颜色被视为透明色，找图顺序和按键精灵相同。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：长整型数。 <br /> 参数2
+				左边界：整型数，用于设置找色范围，找色区域左上角的横坐标（窗口客户区坐标）。 <br /> 参数3
+				上边界：整型数，用于设置找色范围，找色区域左上角的纵坐标（窗口客户区坐标）。 <br /> 参数4
+				右边界：整型数，用于设置找色范围，找色区域右下角的横坐标（窗口客户区坐标）。 <br /> 参数5
+				下边界：整型数，用于设置找色范围，找色区域右下角的纵坐标（窗口客户区坐标）。 <br /> 参数6
+				数据句柄或图片文件路径：数据句柄在LoadBMP命令的数据句柄组里已经解释过了；图片文件路径，字符串，要求图片格式是24位BMP文件。<br />
+				参数7
+				颜色最大偏差：整型数。游戏中不同电脑上显示的颜色会有点偏差，这个参数用于兼容这种情况，它设置的是RGB各颜色分量偏差的最大允许值，取值范围是0-255，０是无颜色偏差。
+				<br /> 参数8 相似度：浮点数，表示不满足条件的点所允许占的比例。取值为0到1之间的小数，1为最相似，相似度越高找图速度越快。 <br />
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">横坐标和纵坐标构成的二维数组：找到图时返回的是一个二维数组，第一维大小是两个元素，分别存放横坐标和纵坐标的数值。未找到图时返回的是整数0。&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">XYArray=Plugin.BGCP2_02.FindPictureA(hwnd,0,0,1024,768,HandleArray(0),30,0.9)<br />
+				If IsArray(XYArray)<br /> &nbsp;&nbsp;&nbsp;&nbsp;XYlength=
+				UBound(XYArray,2)<br /> &nbsp;&nbsp;&nbsp;&nbsp;For i=0 to XYlength<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox
+				CStr(XYArray(0,i))&","&CStr(XYArray(1,i))<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;Next<br /> EndIf<br />
+			</td>
+		</tr>
+		<tr>
+
+
+		</tr>
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="FindPictureN" id="FindPictureN"></a>FindPictureN
+				范围找多图</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>范围找多图,获得找到的第一个坐标。用于找图的图片四角的颜色相同时，被该颜色被视为透明色，找图顺序和按键精灵相同。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：长整型数。 <br /> 参数2
+				左边界：整型数，用于设置找色范围，找色区域左上角的横坐标（窗口客户区坐标）。 <br /> 参数3
+				上边界：整型数，用于设置找色范围，找色区域左上角的纵坐标（窗口客户区坐标）。 <br /> 参数4
+				右边界：整型数，用于设置找色范围，找色区域右下角的横坐标（窗口客户区坐标）。 <br /> 参数5
+				下边界：整型数，用于设置找色范围，找色区域右下角的纵坐标（窗口客户区坐标）。 <br /> 参数6
+				数据句柄数组：数据句柄在LoadBMP命令的数据句柄组里已经解释过了。<br /> 参数7
+				颜色最大偏差：整型数。游戏中不同电脑上显示的颜色会有点偏差，这个参数用于兼容这种情况，它设置的是RGB各颜色分量偏差的最大允许值，取值范围是0-255，０是无颜色偏差。
+				<br /> 参数8 相似度：浮点数，表示不满足条件的点所允许占的比例。取值为0到1之间的小数，1为最相似，相似度越高找图速度越快。 <br />
+				参数9 横坐标，整型数，用于返回找到的颜色的横坐标（窗口客户区坐标），找不到时此值是-1。 <br /> 参数10
+				纵坐标，整型数，用于返回找到的颜色的纵坐标（窗口客户区坐标），找不到时此值是-1。<br /> 参数11
+				图片序号：整型数，此处用变量作为参数，用于表示找到的是哪个图，未找到时为-1。<br />
+
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">XYArray = Plugin.BGCP2_02.FindPictureN(hwnd, 0,
+				0, width, height, BMPArray, 10, 0.9, posX,posY,seq)<br /> If
+				posX<>-1 And posY<>-1 And seq<>-1 <br />
+				&nbsp;&nbsp;&nbsp;&nbsp;MsgBox posX & "," & posY & "|" & seq<br />
+				End If<br />
+			</td>
+		</tr>
+
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="FindPictureNA" id="FindPictureNA"></a>FindPictureNA
+				范围找多图</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>范围找多图,获得找到的所有坐标。用于找图的图片四角的颜色相同时，被该颜色被视为透明色，找图顺序和按键精灵相同。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：长整型数。 <br /> 参数2
+				左边界：整型数，用于设置找色范围，找色区域左上角的横坐标（窗口客户区坐标）。 <br /> 参数3
+				上边界：整型数，用于设置找色范围，找色区域左上角的纵坐标（窗口客户区坐标）。 <br /> 参数4
+				右边界：整型数，用于设置找色范围，找色区域右下角的横坐标（窗口客户区坐标）。 <br /> 参数5
+				下边界：整型数，用于设置找色范围，找色区域右下角的纵坐标（窗口客户区坐标）。 <br /> 参数6
+				数据句柄数组：数据句柄在LoadBMP命令的数据句柄组里已经解释过了。<br /> 参数7
+				颜色最大偏差：整型数。游戏中不同电脑上显示的颜色会有点偏差，这个参数用于兼容这种情况，它设置的是RGB各颜色分量偏差的最大允许值，取值范围是0-255，０是无颜色偏差。
+				<br /> 参数8 相似度：浮点数，表示不满足条件的点所允许占的比例。取值为0到1之间的小数，1为最相似，相似度越高找图速度越快。<br />
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">横坐标和纵坐标构成的二维数组：第一维大小是三个元素，分别存放横坐标、纵坐标和图片序号的数值。未找到图时返回的是整数0。&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">XYArray = Plugin.BGCP2_02.FindPictureNA(hwnd,
+				0, 0, 1280, 768, BMPArray, 10, 0.9)<br /> If IsArray(XYArray) Then <br />
+				&nbsp;&nbsp;&nbsp;&nbsp;For index= 0 to UBound(XYArray,2) <br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str = str & "|" &
+				XYArray(2, index) <br /> &nbsp;&nbsp;&nbsp;&nbsp;Next<br /> MsgBos
+				str<br /> End If<br />
+			</td>
+		</tr>
+
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="SavePicture" id="SavePicture"></a>SavePicture
+				范围截图</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>范围截图,保存图片为24位BMP图片。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">1)窗口句柄、左边界、上边界、右边界、下边界：与FindColor函数的解释相同。<br />
+				2)文件路径：字符串，保存图片的文件路径。
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">Call
+				Plugin.BGCP2_02.SavePicture(hwnd,0,0,800,600,"C:\save1.bmp")<br />
+			</td>
+		</tr>
+
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="1"
+		class="ts">
+		<tr>
+			<th width="100px">命令名称：</th>
+			<td class="name"><a name="GetColorStateRgn"
+				id="GetColorStateRgn"></a>GetColorStateRgn 范围取颜色特征</td>
+		</tr>
+		<tr>
+			<th>命令功能：</th>
+			<td>范围取颜色特征，扫描区域内所有的点，和指定的颜色对比，符合条件的为1，不符合条件的为0，以字符串形式返回。</td>
+		</tr>
+		<tr>
+			<th>命令参数：</th>
+			<td class="canshu">参数1 窗口句柄：长整型数。 <br /> 参数2
+				左边界：整型数，用于设置找色范围，找色区域左上角的横坐标（窗口客户区坐标）。 <br /> 参数3
+				上边界：整型数，用于设置找色范围，找色区域左上角的纵坐标（窗口客户区坐标）。 <br /> 参数4
+				右边界：整型数，用于设置找色范围，找色区域右下角的横坐标（窗口客户区坐标）。 <br /> 参数5
+				下边界：整型数，用于设置找色范围，找色区域右下角的纵坐标（窗口客户区坐标）。 <br /> 参数6 颜色：整型数。 <br /> 参数7
+				颜色最大偏差：整型数。游戏中不同电脑上显示的颜色会有点偏差，这个参数用于兼容这种情况，它设置的是RGB各颜色分量偏差的最大允许值，取值范围是0-255，０是无颜色偏差。
+				<br /> 参数8 查找方式：整型数，用于设置找色时扫描的顺序,取值可叠加使用，也就是做或运算，做加法也可。可取如下值：
+				<table width="450" border="1" cellpadding="0" cellspacing="0">
+					<tr>
+						<th width="34" scope="col">值</th>
+						<th width="410" scope="col">说明</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>纵向扫描，纵向从上到下按列从左到右扫描；不取1时为横向扫描，横向从左到右按行从上到下扫描。</td>
+					</tr>
+					<tr>
+						<td>256</td>
+						<td>返回的字符串为按十六进制字符串的形式表示；不取256时返回的字符串按二进制字符串的形式表示。</td>
+					</tr>
+				</table> <br />
+			</td>
+			</td>
+		</tr>
+		<tr>
+			<th>返回值：</th>
+			<td class="fanhui">特征字符串：字符串，二进制字符串或十六进制字符串，具体的见参数中方式的说明。&nbsp;</td>
+		</tr>
+		<tr>
+			<th>脚本例子：<br /> <span class="red">(8.x语法)</span>
+			</th>
+			<td class="lizi">str=Plugin.BGCP2_02.GetColorStateRgn(hwnd,16,8,20,11,Lib.算法.十六进制转十进制("ffffff"),30,0)<br />
+				MsgBox str<br />
+			</td>
+		</tr>
+
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+361度窗口插件通用版更新说明
+
+V1.20
+1.增加FixWindow和RestoreFixWindow函数
+2.EnumWindowA函数增加使用所有者窗口查找窗口功能
+
+V1.11
+1.修复特殊情况下获取不到父窗口的bug,受影响的有EnumWindowA、GetWindow等多个函数
+
+V1.10
+1.增加进程内注册方式
+2.增加HighlightWindow、HighlightWindowEx、SetFakeActive函数
+3.SetWindowState函数增加结束窗口进程
